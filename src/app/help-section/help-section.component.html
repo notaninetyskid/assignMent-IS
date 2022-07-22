@@ -1,0 +1,37 @@
+<div id="#Form">
+    <div class="row pt-5 w-100">
+
+        <div class="col-12 col-md-6 mt-4 ms-5">
+            <p class="h3">We are happy to help (:</p>
+            <form [formGroup]="HelpForm" (ngSubmit)="onSubmit()">
+                <div class="row pb-4">
+                    <div class="col-12">
+                        <input class="form-control mb-4" formControlName="fullName" placeholder="Full Name" type="text">
+                        <input type="text" class="mb-4 form-control" formControlName="email" placeholder="Email">
+                        <input type="number" class="mb-4 form-control" formControlName="contactNumber"
+                            placeholder="Contact no.">
+                        <input type="text" class="mb-4 form-control pb-5" formControlName="yourQuery"
+                            placeholder="Add your query here">
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="text-danger" *ngIf="formIsNotReady">Please fill the credentials correctly</span>
+                            <span class="text-success"*ngIf="formIsReady">Your request have been saved successfully</span>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">
+                                Submit
+                            </button>
+                            <button class="btn btn-warning" type="button" (click)="ShowQueryDetails()">Click here to see
+                                your
+                                queries</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-12 col-md-4 mt-4 ms-5">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

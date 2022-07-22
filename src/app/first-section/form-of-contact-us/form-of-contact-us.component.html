@@ -1,0 +1,26 @@
+<div >
+    <div class="row pt-5 w-100">
+        <div class="col-12 col-md-6 mt-4 ms-5">
+            <p class="h3">Please provide required information we will try to get back to you as soon as possible</p>
+            <form [formGroup]="ContactUsForm" (ngSubmit)="onSubmit()">
+                <div class="row pb-4">
+                    <div class="col-12">
+                        <input id="Form" class="form-control mb-4" formControlName="fullName" placeholder="Full Name"
+                            type="text">
+                            <input type="text" class="mb-4 form-control" formControlName="email" placeholder="Email">
+                            <input type="number" class="mb-4 form-control" formControlName="contactNumber" placeholder="Contact no.">
+                            <input type="text" class="mb-4 form-control" formControlName="yourQuery" placeholder="Add your query here">
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="text-danger" *ngIf="!ContactUsForm.valid && formIsDone">Please add valid credentials</span>                            
+                            <button class="btn btn-primary" action="submit" [disabled]="!ContactUsForm.valid">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

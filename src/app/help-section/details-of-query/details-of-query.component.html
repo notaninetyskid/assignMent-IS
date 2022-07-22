@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-12" *ngIf="noQueries">
+        <span class="fs-3 fst-italic">You don't have any queries yet.</span>
+    </div>
+</div>
+
+<div class="row justify-content-start mb-5 border rounded" style="cursor: pointer"
+    *ngFor='let queryDetail of queryDetails'>
+    <div class="col-12 pb-3 fs-5">
+        <b>Name:</b> {{ queryDetail.fullName }}
+    </div>
+    <div class="col-12 pb-3 fs-5">
+        <b>Email:</b>{{ queryDetail.email }}
+    </div>
+    <div class="col-12 pb-3 fs-5">
+        <b>Contact no:</b> {{ queryDetail.contactNumber }}
+    </div>
+    <div class="col-12 pb-3 fs-5">
+        <b>Your query:</b> {{ queryDetail.yourQuery }}
+    </div>
+</div>
+
+
+
+
+
